@@ -17,43 +17,58 @@
            that together show the COMPLETE image seamlessly.
            Click anywhere → panels split apart like a book.
            ===================================================== */
-        #cover{
-            position:fixed;top:0;left:0;width:100%;height:100vh;
-            z-index:1000;cursor:pointer;overflow:hidden;
-        }
+        /* Add perspective */
+#cover{
+  perspective: 2000px;
+}
 
-        /* Left panel — shows left half of image */
-        .env-left{
-            position:absolute;top:0;left:0;
-            width:50%;height:100%;overflow:hidden;
-            will-change:transform;
-            transition:transform 1.5s cubic-bezier(0.77,0,0.175,1);
-        }
-        .env-left .env-img{
-            position:absolute;top:0;left:0;
-            width:200%;height:100%;
-            object-fit:cover;object-position:left center;
-            pointer-events:none;
-        }
+/* LEFT PANEL */
+.env-left{
+  position:absolute;
+  top:0; left:0;
+  width:50%; height:100%;
+  overflow:hidden;
 
-        /* Right panel — shows right half of image */
-        .env-right{
-            position:absolute;top:0;right:0;
-            width:50%;height:100%;overflow:hidden;
-            will-change:transform;
-            transition:transform 1.5s cubic-bezier(0.77,0,0.175,1) 0.03s;
-        }
-        .env-right .env-img{
-            position:absolute;top:0;right:0;
-            width:200%;height:100%;
-            object-fit:cover;object-position:right center;
-            pointer-events:none;
-        }
+  transform-origin: left center;
+  transition: transform 1.4s cubic-bezier(0.65,0,0.35,1);
+}
 
-        /* Opened: panels fly apart */
-        #cover.opened .env-left {transform:translateX(-100%);}
-        #cover.opened .env-right{transform:translateX(100%);}
-        #cover.opened{pointer-events:none;}
+/* RIGHT PANEL */
+.env-right{
+  position:absolute;
+  top:0; right:0;
+  width:50%; height:100%;
+  overflow:hidden;
+
+  transform-origin: right center;
+  transition: transform 1.4s cubic-bezier(0.65,0,0.35,1);
+}
+
+/* IMAGE HANDLING (unchanged logic) */
+.env-left .env-img{
+  position:absolute;
+  top:0; left:0;
+  width:200%; height:100%;
+  object-fit:cover;
+  object-position:left center;
+}
+
+.env-right .env-img{
+  position:absolute;
+  top:0; right:0;
+  width:200%; height:100%;
+  object-fit:cover;
+  object-position:right center;
+}
+
+/* 🔥 OPEN LIKE BOOK */
+#cover.opened .env-left{
+  transform: rotateY(-160deg);
+}
+
+#cover.opened .env-right{
+  transform: rotateY(160deg);
+}
 
         /* Subtle "tap" hint at the very bottom */
         .tap-hint{
@@ -177,7 +192,7 @@
             bottom: 80px;
             left: 50%;
             transform: translateX(10%); /* moves it to right side */
-            top:120px;right:60px; /* initial position, moved by JS */
+            /* initial position, moved by JS */
             /* exactly same visual style as Yes */
             background:transparent;
             border:1px solid var(--gold);
