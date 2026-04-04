@@ -49,7 +49,12 @@
         #cover.opened .env-left  { transform:rotateY(-148deg); }
         #cover.opened .env-right { transform:rotateY(148deg);  }
         #cover.opened{pointer-events:none;}
-
+        @keyframes sealBreak{
+            0%  { transform:translate(-50%,-50%) scale(1) rotate(0deg);   opacity:1; }
+            35% { transform:translate(-50%,-50%) scale(1.1) rotate(-4deg);opacity:1; }
+            65% { transform:translate(-50%,-50%) scale(1.05) rotate(3deg);opacity:0.6; }
+            100%{ transform:translate(-50%,-50%) scale(0.6) rotate(0deg); opacity:0; }
+        }
 
         /* Subtle "tap" hint at the very bottom */
         .tap-hint{
