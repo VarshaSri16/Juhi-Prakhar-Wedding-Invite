@@ -548,10 +548,6 @@
     function startNoButton(){
         equalizeBtns();
         // Initial position: top-right area, well away from Yes
-        btnNo.style.top='22%';
-        btnNo.style.left='auto';
-        btnNo.style.right='8%';
-
         // Move on hover/touch
         btnNo.addEventListener('mouseenter',moveNo);
         btnNo.addEventListener('touchstart',e=>{e.preventDefault();moveNo();},{passive:false});
