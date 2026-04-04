@@ -106,7 +106,7 @@
                 opacity:0.5;
                 color: rgba(255,255,255,0.85);/* 👈 add this line */
                 animation:heartbeat 1.8s ease-in-out infinite;
-            
+
         }
         @keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 
@@ -144,11 +144,10 @@
             left 0.28s cubic-bezier(0.34,1.56,0.64,1);
         }
 
+
         /* YES button — fixed in center-bottom area */
         #btnYes{
             position:fixed;
-            bottom:max(80px,env(safe-area-inset-bottom,80px));
-            left:50%;transform:translateX(-50%);
             /* same style as No */
             background:transparent;
             border:1px solid var(--gold);
@@ -163,6 +162,9 @@
             transition:background 0.2s,color 0.2s,box-shadow 0.2s;
             -webkit-tap-highlight-color:transparent;
             white-space:nowrap;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-110%); /* moves it to left side */
         }
         #btnYes:hover,#btnYes:active{
             background:rgba(201,162,82,0.12);
@@ -172,6 +174,9 @@
         /* NO button — fixed, roams the whole viewport */
         #btnNo{
             position:fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(10%); /* moves it to right side */
             top:120px;right:60px; /* initial position, moved by JS */
             /* exactly same visual style as Yes */
             background:transparent;
