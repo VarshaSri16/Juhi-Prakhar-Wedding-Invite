@@ -21,30 +21,14 @@
             z-index:1000;cursor:pointer;overflow:hidden;
             perspective:1600px;perspective-origin:50% 50%;
         }
-        .env-left{
-            position:absolute;top:0;left:0;width:50%;height:100%;overflow:hidden;
-            transform-origin:left center;
-            transform-style:preserve-3d;
-            will-change:transform;
-            transition:transform 1.35s cubic-bezier(0.645,0.045,0.355,1) 0.12s;
-            box-shadow:inset -8px 0 28px rgba(0,0,0,0.38);
-        }
-        .env-left .env-img{
-            position:absolute;top:0;left:0;width:200%;height:100%;
-            object-fit:cover;object-position:left center;pointer-events:none;
-        }
-        .env-right{
-            position:absolute;top:0;right:0;width:50%;height:100%;overflow:hidden;
-            transform-origin:right center;
-            transform-style:preserve-3d;
-            will-change:transform;
-            transition:transform 1.35s cubic-bezier(0.645,0.045,0.355,1) 0.28s;
-            box-shadow:inset 8px 0 28px rgba(0,0,0,0.38);
-        }
-        .env-right .env-img{
-            position:absolute;top:0;right:0;width:200%;height:100%;
-            object-fit:cover;object-position:right center;pointer-events:none;
-        }
+        .env-left .env-img,
+.env-right .env-img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100vw;   /* full viewport width */
+    object-fit: cover;
+}
         /* Opened: panels fold 3D outward */
         #cover.opened .env-left  { transform:rotateY(-148deg); }
         #cover.opened .env-right { transform:rotateY(148deg);  }
