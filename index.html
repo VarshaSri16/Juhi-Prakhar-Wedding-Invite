@@ -309,16 +309,26 @@
         .rsvp-link:hover,.rsvp-link:active{opacity:.7;}
    
         .rsvp-form-btn{
-     position:absolute;bottom:max(40px,env(safe-area-inset-bottom,40px));
-            left:50%;transform:translateX(-50%);
-            color:var(--gold);font-family:'Dancing Script',cursive;
-            font-size:clamp(26px,6vw,38px);
-            text-align:center;z-index:20;pointer-events:none;
-            animation:floatY 2.2s ease-in-out infinite;
-            background:rgba(13, 43, 43,0.5);
-            padding:9px 22px;border-radius:40px;
-            border:1px solid rgba(201,162,82,0.4);
-            white-space:nowrap;
+    color:var(--gold);
+    font-family:'Dancing Script',cursive;
+    font-size:clamp(18px,5vw,26px);
+    font-weight:600;
+    text-align:center;
+    animation:floatY 2.2s ease-in-out infinite;
+    text-shadow:0 2px 12px rgba(0,0,0,0.9);
+    background:rgba(13, 43, 43,0.5);
+    padding:9px 22px;
+    border-radius:40px;
+    border:1px solid rgba(201,162,82,0.4);
+    text-decoration:none;
+    display:inline-block;
+    white-space:nowrap;
+    -webkit-tap-highlight-color:transparent;
+    cursor:pointer;
+}
+.rsvp-form-btn:hover{
+    text-decoration:none;
+}
 }
 
         /* UTILS */
